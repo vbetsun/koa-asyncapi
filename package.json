@@ -13,12 +13,10 @@
     "lint": "standard --verbose | snazzy",
     "lint:fix": "standard --fix",
     "build": "babel --plugins @babel/plugin-transform-modules-commonjs index.js -o index.cjs",
-    "test": "NODE_OPTIONS=--experimental-vm-modules jest --forceExit",
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest --collectCoverage",
     "test:ci": "npm run lint && npm test && npm run test:typescript",
     "test:typescript": "tsd",
-    "prepublish:npm": "npm run build",
-    "publish:npm": "npm publish --access public",
-    "prerelease": "npm run build",
+    "prepare": "npm run build",
     "release": "release-it"
   },
   "repository": {
@@ -34,8 +32,13 @@
     }
   ],
   "engines": {
-    "node": "^12.12.0 || ^14.13.1 || >=16.13.0 || >=17.2.0"
+    "node": ">= 12"
   },
+  "files": [
+    "index.js",
+    "index.cjs",
+    "index.d.ts"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/VBetsun/koa-asyncapi/issues"
@@ -52,6 +55,7 @@
     "@babel/cli": "^7.16.0",
     "@babel/core": "^7.16.0",
     "@babel/plugin-transform-modules-commonjs": "^7.16.0",
+    "@types/koa": "^2.13.4",
     "jest": "^27.4.3",
     "koa": "^2.13.4",
     "release-it": "^14.11.8",
@@ -61,21 +65,22 @@
     "tsd": "^0.19.0",
     "typescript": "^4.5.2"
   },
-  "standard": {
-    "ignore": [
-      "index.d.ts"
-    ]
-  },
-  "tsd": {
-    "directory": "test",
-    "compilerOptions": {
-      "lib": [
-        "es2015"
-      ]
-    }
-  },
   "dependencies": {
     "@asyncapi/generator": "^1.8.27",
     "@asyncapi/html-template": "^0.24.0"
+  },
+  "coverageThreshold": {
+    "global": {
+      "branches": 100,
+      "functions": 100,
+      "lines": 100,
+      "statements": 100
+    }
+  },
+  "standard": {
+    "ignore": [
+      "index.d.ts",
+      "index.test-d.ts"
+    ]
   }
 }

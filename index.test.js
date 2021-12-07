@@ -1,6 +1,6 @@
 import { describe, it } from '@jest/globals'
 import request from 'supertest'
-import esmApp from '../examples/app.js'
+import esmApp from './examples/app.js'
 
 describe('koa-asyncapi', () => {
   it('should return index file', async () => {
