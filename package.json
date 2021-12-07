@@ -68,7 +68,7 @@
   },
   "dependencies": {
     "@asyncapi/generator": "^1.8.27",
-    "@asyncapi/html-template": "^0.20.1"
+    "@asyncapi/html-template": "^0.24.0"
   },
   "coverageThreshold": {
     "global": {
