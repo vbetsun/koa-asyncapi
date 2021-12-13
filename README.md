@@ -11,7 +11,7 @@
 ## Install
 
 ```sh
-npm i koa-asyncapi
+npm i @asyncapi/generator @asyncapi/html-template koa-asyncapi
 ```
 
 ## Usage
