@@ -53,7 +53,7 @@
   ],
   "devDependencies": {
     "@asyncapi/generator": "^1.8.27",
-    "@asyncapi/html-template": "^0.24.0",
+    "@asyncapi/html-template": "^0.24.8",
     "@babel/cli": "^7.16.0",
     "@babel/core": "^7.16.0",
     "@babel/plugin-transform-modules-commonjs": "^7.16.0",
@@ -70,7 +70,7 @@
   },
   "peerDependencies": {
     "@asyncapi/generator": "^1.8.27",
-    "@asyncapi/html-template": "^0.24.0"
+    "@asyncapi/html-template": "^0.24.8"
   },
   "coverageThreshold": {
     "global": {
